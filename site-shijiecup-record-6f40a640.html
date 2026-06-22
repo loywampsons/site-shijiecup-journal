@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <title>世界杯知识库 · 站内指南 | site-shijiecup.com</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf7f2;          /* 米白基调 */
+      font-family: system-ui, 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+      color: #2c2b28;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* 目录感布局 header */
+    .site-header {
+      margin: 1.2rem 0 2.8rem 0;
+      border-bottom: 1px solid #ddd8ce;
+      padding-bottom: 1.2rem;
+    }
+
+    .site-header h1 {
+      font-size: 1.9rem;
+      font-weight: 550;
+      letter-spacing: 2px;
+      color: #3e3a33;
+      margin-bottom: 0.25rem;
+    }
+
+    .site-header .sub {
+      font-size: 0.95rem;
+      color: #756e64;
+      border-left: 3px solid #b8a58b;
+      padding-left: 1rem;
+      margin-top: 0.4rem;
+    }
+
+    /* 卡片 / 区块通用 */
+    .section-card {
+      background: #fffffffb;
+      border-radius: 14px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+      border: 1px solid #e8e2d8;
+      transition: box-shadow 0.2s;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 4px 12px rgba(90, 70, 50, 0.06);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px dashed #d5cdc0;
+      color: #3f3a32;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    h2 i {
+      font-style: normal;
+      color: #ac9a84;
+      margin-right: 0.25rem;
+    }
+
+    /* 引用块 / 提示框 */
+    .insight-box {
+      background: #f4efe7;
+      border-left: 5px solid #b8a58b;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.8rem 0 1.4rem 0;
+      font-size: 0.98rem;
+      color: #3f3a30;
+    }
+
+    .insight-box strong {
+      color: #604d38;
+      font-weight: 600;
+    }
+
+    .tip-box {
+      background: #f0ece4;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      border: 1px solid #ddd3c6;
+    }
+
+    .tip-box::before {
+      content: "💡";
+      font-size: 1.3rem;
+      line-height: 1.5;
+      flex-shrink: 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 1.2rem 0 0.6rem;
+    }
+
+    .info-item {
+      background: #f9f6f0;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      border-left: 3px solid #cbb9a3;
+    }
+
+    .info-item .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #8f8578;
+      font-weight: 500;
+    }
+
+    .info-item .value {
+      font-size: 1rem;
+      margin-top: 0.1rem;
+    }
+
+    .faq-mini {
+      margin-top: 1.2rem;
+    }
+
+    .faq-q {
+      font-weight: 550;
+      margin: 1rem 0 0.1rem;
+      color: #4d443b;
+    }
+
+    .faq-a {
+      margin-left: 0.5rem;
+      padding-left: 0.8rem;
+      border-left: 2px solid #ddd2c4;
+      color: #5b5348;
+    }
+
+    /* 链接样式 */
+    a {
+      color: #5f4c38;
+      text-decoration: none;
+      border-bottom: 1px dotted #cbb9a3;
+      transition: border 0.15s, color 0.15s;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: #2f271f;
+      border-bottom: 1px solid #7f6a56;
+    }
+
+    .inline-link-wrap {
+      background: #f4efe7;
+      padding: 0.2rem 0.4rem;
+      border-radius: 6px;
+      border-bottom: none;
+      font-weight: 500;
+    }
+
+    /* 列表 */
+    ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+
+    li {
+      padding: 0.3rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    li::before {
+      content: "·";
+      position: absolute;
+      left: 0.3rem;
+      color: #b8a58b;
+      font-weight: bold;
+      font-size: 1.4rem;
+      line-height: 1.4;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+
+      .section-card {
+        padding: 1.2rem 1rem;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+
+      .site-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .insight-box {
+        padding: 1rem;
+      }
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e2dad0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #8a7f73;
+    }
+  </style>
+</head>
+<body>
+<div class="page-container">
+
+  <header class="site-header">
+    <h1>⚽ 世界杯 · 知识库入口</h1>
+    <div class="sub">site-shijiecup.com  —— 从赛场到资料，一站梳理</div>
+  </header>
+
+  <!-- 介绍区 / hero角色：快速识别网站用途 -->
+  <section class="section-card">
+    <h2><i>📋</i> 这个网站是做什么的？</h2>
+    <p>
+      如果你正在找一份围绕「世界杯」的可靠信息集合 —— 无论是赛事沿革、球队档案、经典对阵，还是主办城市与纪录数据，这里都做了分类整理。
+      <strong>本网站并不提供直播或票务</strong>，而是更像一座安静的阅览室：把与<a href="https://site-shijiecup.com">世界杯</a>相关的知识点、背景故事、实用资料按目录存放，方便随时查阅。
+    </p>
+    <div class="insight-box">
+      <strong>一句话概括：</strong> 如果你对世界杯的来龙去脉感兴趣，或者需要快速核实某个赛事细节，这个页面可以作为你的起点。
+    </div>
+  </section>
+
+  <!-- 特点 + 场景融合（目录感） -->
+  <section class="section-card">
+    <h2><i>🗂️</i> 内容怎么组织的？</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">🏆 赛事篇</div>
+        <div class="value">历届冠军、决赛比分、最佳射手</div>
+      </div>
+      <div class="info-item">
+        <div class="label">🌍 参赛队</div>
+        <div class="value">各国战绩、经典阵容、出线记录</div>
+      </div>
+      <div class="info-item">
+        <div class="label">📅 里程碑</div>
+        <div class="value">规则变革、标志性比赛、争议时刻</div>
+      </div>
+      <div class="info-item">
+        <div class="label">🏟️ 主办城市</div>
+        <div class="value">场馆容量、举办年份、趣闻数据</div>
+      </div>
+    </div>
+    <p style="margin-top: 0.8rem;">
+      你可以在主站左侧的目录栏里按主题浏览，也可以使用搜索框查找特定年份或球员。
+      所有内容都经过交叉核对，<strong>不包含实时比分或预测</strong>，更侧重可沉淀的足球记忆。
+    </p>
+  </section>
+
+  <!-- 提示区：使用场景与提醒 -->
+  <section class="section-card">
+    <h2><i>🔍</i> 提示与适用场景</h2>
+    <div class="tip-box">
+      <div>
+        <strong>适合这样用：</strong> 写作参考资料、观赛前的背景补课、和朋友聊球时验证细节、了解世界杯历史脉络。<br>
+        <span style="display: inline-block; margin-top: 0.2rem;">👀 不适合：获取即时赛程、投注信息、官方公告。</span>
+      </div>
+    </div>
+    <ul>
+      <li>每篇资料都标注了参考来源或数据截止日期，方便你评估时效。</li>
+      <li>如果你发现内容有出入，欢迎通过站内反馈渠道提出 —— 知识库需要共同维护。</li>
+      <li>网站采用静态页面，加载快，无弹窗广告，专注于阅读体验。</li>
+    </ul>
+    <div style="margin-top: 1rem; padding: 0.6rem 1rem; background: #ebe6dc; border-radius: 30px; display: inline-block; font-size: 0.9rem;">
+      ⏳ 当前已收录 30+ 篇深度条目，且持续补充。
+    </div>
+  </section>
+
+  <!-- 相关信息区 + FAQ 摘要 -->
+  <section class="section-card">
+    <h2><i>❓</i> 你可能想问的（FAQ 摘要）</h2>
+
+    <div class="faq-mini">
+      <div class="faq-q">“这里的资料和维基百科有什么区别？”</div>
+      <div class="faq-a">更聚焦世界杯单项主题，叙述角度统一，并且会挑出中文读者感兴趣的细节做展开，比如亚洲球队的表现、中国球迷熟悉的经典场次。</div>
+
+      <div class="faq-q">“会收录最新一届世界杯的数据吗？”</div>
+      <div class="faq-a">会的，通常在赛事结束两周内完成基本数据与总结性条目的更新。往届内容会同时保留。</div>
+
+      <div class="faq-q">“我需要注册才能浏览吗？”</div>
+      <div class="faq-a">完全不需要。所有知识库内容对访客开放，无付费墙，无需登录。</div>
+    </div>
+
+    <p style="margin-top: 1.6rem; font-size: 0.95rem;">
+      更多常见问题请直接访问主站对应页面，或在站内搜索“FAQ”。<br>
+      如果你想直接进入核心资料区，可以随时点击这里的 <a href="https://site-shijiecup.com" class="inline-link-wrap">世界杯</a> 链接，开始浏览。
+    </p>
+  </section>
+
+  <!-- 额外引用块：提示方向感 -->
+  <div style="margin: 0.8rem 0 1.8rem; text-align: right; font-style: italic; color: #6e655b; border-right: 2px solid #d6cdc0; padding-right: 1rem;">
+    一个更安静的世界杯资料角落 · 不赶流量，只做整理
+  </div>
+
+  <footer>
+    <span>site-shijiecup.com · 知识库入口页面 · 内容持续迭代</span>
+  </footer>
+
+</div>
+</body>
+</html>
